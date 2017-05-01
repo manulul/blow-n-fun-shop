@@ -1,0 +1,26 @@
+body {
+	width: 100%;
+
+}
+
+
+
+
+h3 {
+
+
+}
+
+img {
+	width: 50%;
+	height: 50%;
+}
+.product {
+	width: 25%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.product__img {
+
+}
