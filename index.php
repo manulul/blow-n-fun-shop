@@ -13,7 +13,7 @@
     </head>
 
     <body>
-    <header>
+    <header class="topheader">
         <h1 class="w3-center">Blow 'n' Fun Baby!</h1>	
     </header>
 
@@ -71,7 +71,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	           foreach ($results as $result) { ?>
                
                <header class="w3-container w3-white w3-opacity-min">
-                    <span onclick="document.getElementById('rs-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <span class="lukknap" onclick="document.getElementById('rs-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
              
                 
                         <h2>
