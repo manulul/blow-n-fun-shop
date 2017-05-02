@@ -9,10 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-</head>
 
-<body>
-    <h1 class="w3-center">Blow 'n' Fun Baby!</h1>
+    </head>
+
+    <body>
+    <header>
+        <h1 class="w3-center">Blow 'n' Fun Baby!</h1>	
+    </header>
+
 
     <?php
 $servername = "localhost";
@@ -40,57 +44,29 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
  
  
 ?>
-    <section class="w3-container w3-center w3-teal">
-            <?php
+<section class="w3-container w3-center">
+<?php
 	foreach ($results as $result) { ?>
-                <article class="product">
-                    <h3>
-                        <?php echo $result["name"]; ?>
+<article class="product">
+	<h3 class="h3headers">
+		<?php echo $result["name"]; ?>
+	
+	</h3>
+	
+	<img class="product__img" src="images/<?php echo $result["img"]; ?>">
+	<h3 class="h3prices">
+		<?php echo $result["price"]; ?> KR
+	
+	</h3>
+</article>
+<?php
+} ?>
 
-                    </h3>
+<script type="text/javascript">
+       var modal = document.getElementById('modal')
+});
+</script>
 
-                    <img onclick="document.getElementById( 'rs-modal').style.display='block' " class="product__img" src="images/<?php echo $result["img"]; ?>">
-                    <h3>
-                        <?php echo $result["price"]; ?> KR
-
-                    </h3>
-                          </article>
-                <?php
-                    } ?>
-         
- 
-                    
-            <!--  Modal -->
-           <div id="rs-modal" class="w3-modal" style="display: none;" >
-           <div class="w3-modal-content">
-     
-               <?php
-	           foreach ($results as $result) { ?>
-               
-               <header class="w3-container w3-teal w3-opacity-min">
-                    <span onclick="document.getElementById('rs-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-             
-                
-                        <h2>
-                            <?php echo $result["name"];?>
-                        </h2>
-                </header>
-               
-                <div class="w3-container w3-white">
-                      <img class="product__img" src="images/<?php echo $result["img"]; ?>">
-                    <h3>
-                        <?php echo $result["price"]; ?> KR
-                    </h3>
-                    <p>
-                      <?php echo $result["description"];?>
-                    </p>
-               </div>               <?php
-} ?></div></div>
-   
-          
-                
-
-     </section>
-</body>
-
-</html>
+</section>
+    </body>
+    </html>
