@@ -53,20 +53,43 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
 	</h3>
 	
-	<img class="product__img" src="images/<?php echo $result["img"]; ?>">
+	<img onclick="document.getElementById( 'rs-modal').style.display='block' " class="product__img" src="images/<?php echo $result["img"]; ?>">
 	<h3 class="h3prices">
 		<?php echo $result["price"]; ?> KR
 	
 	</h3>
 </article>
+   
 <?php
 } ?>
-
-<script type="text/javascript">
-       var modal = document.getElementById('modal')
-});
-</script>
-
+ 
+ <!--  Modal -->
+           <div id="rs-modal" class="w3-modal" style="display: none;" >
+           <div class="w3-modal-content">
+     
+               <?php
+	           foreach ($results as $result) { ?>
+               
+               <header class="w3-container w3-white w3-opacity-min">
+                    <span onclick="document.getElementById('rs-modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+             
+                
+                        <h2>
+                            <?php echo $result["name"];?>
+                        </h2>
+                </header>
+               
+                <div class="w3-container modal">
+                      <img class="product__img" src="images/<?php echo $result["img"]; ?>">
+                    <h4>
+                        <?php echo $result["price"]; ?> KR
+                    </h4>
+                    <p class="dscrpt">
+                      <?php echo $result["description"];?>
+                    </p>
+               </div>               <?php
+} ?></div></div>
 </section>
+
     </body>
     </html>

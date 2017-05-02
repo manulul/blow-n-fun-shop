@@ -5,7 +5,7 @@ body {
 
 }
 
-header{
+.topheader{
     width: 100%;
     height: 200px;
     background-image: url("images/header.jpg");
@@ -43,6 +43,9 @@ box-shadow: 10px 10px 15px -2px rgba(153,153,153,1);
 .product__img {
 
 }
+.lukknap {
+    font-size: 33px;
+}
 
 .w3-center{
   font-family: 'Chewy', cursive;
@@ -53,3 +56,12 @@ box-shadow: 10px 10px 15px -2px rgba(153,153,153,1);
 .w3-container{
     background-color: #dcbdfc;
 }
+
+.dscrpt {
+    font-size: 18px;
+}
+
+.modal{
+    background-color: #dcbdfc;
+}
+
